@@ -60,9 +60,10 @@ class lexer:
 				self.char = self.stream[self.pos]
 				integer += self.char
 			result = token(INT, int(integer))
+		
 		#Error if the current character does not fall into any of the tokens
 		else:
-			raise Exception("Syntax is invalid")
+			raise Exception("Invalid character used:", self.char)
 
 		#Change current character to next character
 		self.pos += 1
